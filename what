@@ -1,0 +1,49 @@
+#Rock, Paper, Scissors! Best 2 out of 3!
+import random 
+i = 0
+User_Score = 0
+AI_Score = 0
+Choices = ['Rock','Paper','Scissors']
+while User_Score<=2 or AI_Score <=2:
+  if User_Score == 2:
+    print(f"Amazing! You've won! The final score is {User_Score}:{AI_Score}")
+    break
+  elif AI_Score == 2:
+    print(f"LOSER !!! Keep practicing since you lost, try again next time the score is {User_Score}:{AI_Score}")
+    break
+  else:
+    user = Choices[int(input("Select 1,2 or 3): \n 1. Rock\n 2.Paper \n 3.Scissors\n"))-1]
+    computer= random.choice(Choices)
+    if user == computer:
+      print(f'You both selected {user}, its a tie', f'The current score is {User_Score}:{AI_Score}')  
+  #ROCK VS AI
+    elif user == 'Rock':
+      if computer == 'Paper':
+        i+=1
+        AI_Score+=1
+        print(f'You selected {user} while the AI selected {computer}, you lose!\n',f'The current score is {User_Score}:{AI_Score}')
+      else:
+        i+=1
+        User_Score+=1
+        print(f'You selected {user} while the AI selected {computer}, you won!\n',f'The current score is {User_Score}:{AI_Score}')
+  #PAPER VS AI
+    elif user == 'Paper':
+      if computer == 'Scissors':
+        i+=1
+        AI_Score+=1
+        print(f'You selected {user} while the AI selected {computer}, you lose!\n',f'The current score is {User_Score}:{AI_Score}')
+      else:
+        i+=1
+        User_Score+=1
+        print(f'You selected {user} while the AI selected {computer}, you won!\n',f'The current score is {User_Score}:{AI_Score}')
+  #Scissors VS AI
+    elif user == 'Scissors':
+      if computer == 'Rock':
+        i+=1
+        AI_Score+=1
+        print(f'You selected {user} while the AI selected {computer}, you lose!\n',f'The current score is {User_Score}:{AI_Score}')
+      else:
+        i+=1
+        User_Score+=1
+        print(f'You selected {user} while the AI selected {computer}, you won!\n',f'The current score is {User_Score}:{AI_Score}') 
+
